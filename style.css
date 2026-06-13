@@ -590,3 +590,19 @@ a:hover { color: var(--gold-dark); }
   font-weight: 800;
   margin-bottom: 1.6rem;
 }
+
+
+.profile-photo {
+  width: 100%;
+  max-width: 190px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+}
+
+.person-card.with-photo {
+  display: block;
+}
