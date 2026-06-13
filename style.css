@@ -606,3 +606,19 @@ a:hover { color: var(--gold-dark); }
 .person-card.with-photo {
   display: block;
 }
+
+
+.footer-support-button {
+  display: inline-flex;
+  margin-top: .55rem;
+  padding: .55rem .85rem;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--navy) !important;
+  font-weight: 900;
+}
+
+.footer-support-button:hover {
+  background: #ffffff;
+  color: var(--navy) !important;
+}
