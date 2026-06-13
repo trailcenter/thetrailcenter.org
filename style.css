@@ -622,3 +622,16 @@ a:hover { color: var(--gold-dark); }
   background: #ffffff;
   color: var(--navy) !important;
 }
+
+
+.footer-support-center {
+  max-width: var(--max);
+  margin: 2rem auto 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer-support-center .footer-support-button {
+  margin-top: 0;
+}
