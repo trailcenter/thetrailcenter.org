@@ -563,3 +563,30 @@ a:hover { color: var(--gold-dark); }
     grid-template-columns: 1fr;
   }
 }
+
+
+.post-format-guide {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 1.4rem;
+}
+
+.article-body {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: clamp(1.4rem, 3vw, 2.4rem);
+}
+
+.article-body p {
+  margin: 0 0 1.2rem;
+}
+
+.article-body .insight-meta {
+  color: var(--navy-2);
+  font-weight: 800;
+  margin-bottom: 1.6rem;
+}

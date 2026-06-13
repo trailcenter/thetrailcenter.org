@@ -1,0 +1,27 @@
+[
+  {
+    "id": "what-does-trauma-responsive-change-mean",
+    "title": "What Does Trauma-Responsive Change Actually Mean?",
+    "date": "Coming Soon",
+    "author": "Dr. Lori L. Hall",
+    "category": "Trauma-Responsive Systems",
+    "excerpt": "A short introduction to the difference between knowing about trauma and changing the programs, policies, procedures, and practices that shape people’s lives.",
+    "content": [
+      "This is a sample post placeholder. When you are ready to publish your first post, you can replace this content with your own writing.",
+      "The Insights page is now connected to posts.json. That means new posts can be added by editing this one file in GitHub.",
+      "Each paragraph should be placed inside quotation marks as a separate line in the content section."
+    ]
+  },
+  {
+    "id": "why-systems-matter-in-trauma-work",
+    "title": "Why Systems Matter in Trauma Work",
+    "date": "Coming Soon",
+    "author": "Dr. Lori L. Hall",
+    "category": "Systems and Institutions",
+    "excerpt": "A reflection on why trauma-responsive work must look beyond individual behavior and examine the institutions, systems, and conditions that shape harm and healing.",
+    "content": [
+      "This is a second sample post placeholder. You can delete it later or replace it with a real post.",
+      "Use this structure to publish shorter reflections, commentary, editorials, or public-facing pieces connected to the TRAIL Center mission."
+    ]
+  }
+]
