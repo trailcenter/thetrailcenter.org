@@ -1,25 +1,23 @@
 # TRAIL Center Website
 
-This is the first static website for the TRAIL Center.
+This is a static website for the TRAIL Center. It can be hosted on GitHub Pages.
 
-## Files
+## Main files
+- index.html
+- about.html
+- our-work.html
+- trail-lab.html
+- trail-speaks.html
+- trail-academy.html
+- trail-forward.html
+- people.html
+- get-involved.html
+- support.html
+- store.html
+- contact.html
+- style.css
+- script.js
+- assets/
 
-- `index.html` — Home page
-- `about.html` — About page
-- `our-work.html` — Overview of the Center's work
-- `trail-lab.html` — TRAIL Lab page
-- `trail-speaks.html` — TRAIL Speaks page
-- `trail-academy.html` — TRAIL Academy page
-- `trail-forward.html` — TRAIL Forward page
-- `people.html` — People page
-- `get-involved.html` — Get Involved page
-- `support.html` — Support the Mission page
-- `store.html` — Store coming soon page
-- `contact.html` — Contact page
-- `style.css` — Website design
-- `script.js` — Mobile menu and footer year
-- `assets/` — Logo and image files
-
-## Uploading to GitHub
-
-Upload all files and the `assets` folder to the root of the repository, so `index.html` is visible at the top level.
+## Upload to GitHub
+Upload all files and the assets folder to the root of the GitHub repository.
