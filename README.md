@@ -15,6 +15,7 @@ This is a static website for the TRAIL Center. It can be hosted on GitHub Pages.
 - support.html
 - store.html
 - contact.html
+- insights.html
 - style.css
 - script.js
 - assets/
