@@ -1310,3 +1310,16 @@ a:hover { color: var(--gold-dark); }
     letter-spacing: -0.025em !important;
   }
 }
+
+
+/* Support amount display after removing /year and /month */
+.tier-amount,
+.support-tier-card .tier-amount,
+.donor-tier-card .tier-amount,
+.tier-card .tier-amount,
+.monthly-donor-card .tier-amount,
+.annual-donor-card .tier-amount {
+  white-space: nowrap !important;
+  font-size: clamp(1.65rem, 2.3vw, 2.25rem) !important;
+  letter-spacing: -0.02em !important;
+}
