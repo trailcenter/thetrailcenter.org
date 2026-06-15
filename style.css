@@ -1247,3 +1247,66 @@ a:hover { color: var(--gold-dark); }
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Final donor amount fit fix */
+.tier-amount,
+.support-tier-card .tier-amount,
+.donor-tier-card .tier-amount,
+.tier-card .tier-amount,
+.monthly-donor-card .tier-amount,
+.annual-donor-card .tier-amount {
+  display: block !important;
+  white-space: nowrap !important;
+  overflow-wrap: normal !important;
+  word-break: keep-all !important;
+  hyphens: none !important;
+  font-size: clamp(1.15rem, 1.65vw, 1.55rem) !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.035em !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+}
+
+.tier-amount .per,
+.support-tier-card .tier-amount .per,
+.donor-tier-card .tier-amount .per,
+.tier-card .tier-amount .per,
+.monthly-donor-card .tier-amount .per,
+.annual-donor-card .tier-amount .per {
+  display: inline !important;
+  font-size: inherit !important;
+  margin-top: 0 !important;
+}
+
+.support-tier-card,
+.donor-tier-card,
+.tier-card,
+.monthly-donor-card,
+.annual-donor-card {
+  overflow: hidden !important;
+}
+
+@media (max-width: 1200px) {
+  .tier-amount,
+  .support-tier-card .tier-amount,
+  .donor-tier-card .tier-amount,
+  .tier-card .tier-amount,
+  .monthly-donor-card .tier-amount,
+  .annual-donor-card .tier-amount {
+    font-size: clamp(.98rem, 1.35vw, 1.25rem) !important;
+    letter-spacing: -0.045em !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .tier-amount,
+  .support-tier-card .tier-amount,
+  .donor-tier-card .tier-amount,
+  .tier-card .tier-amount,
+  .monthly-donor-card .tier-amount,
+  .annual-donor-card .tier-amount {
+    font-size: 1.35rem !important;
+    letter-spacing: -0.025em !important;
+  }
+}
