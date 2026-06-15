@@ -197,3 +197,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
+// T-shirt product gallery toggle
+document.addEventListener("DOMContentLoaded", function () {
+  const galleryImage = document.getElementById("tshirtGalleryImage");
+  const buttons = document.querySelectorAll(".tshirt-gallery-thumb[data-image]");
+  if (!galleryImage || !buttons.length) return;
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", function () {
+      galleryImage.src = button.dataset.image;
+      const label = button.textContent.trim();
+      galleryImage.alt = label + " t-shirt preview";
+
+      buttons.forEach((btn) => {
+        btn.classList.remove("active");
+        btn.setAttribute("aria-pressed", "false");
+      });
+
+      button.classList.add("active");
+      button.setAttribute("aria-pressed", "true");
+    });
+  });
+});

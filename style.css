@@ -1098,3 +1098,152 @@ a:hover { color: var(--gold-dark); }
   outline: 3px solid rgba(232, 178, 62, .55);
   outline-offset: 2px;
 }
+
+
+/* Donor tier card text-fitting update */
+.support-tier-grid,
+.donor-tier-grid,
+.tier-grid,
+.monthly-donor-grid,
+.annual-donor-grid {
+  align-items: stretch;
+}
+
+.support-tier-card,
+.donor-tier-card,
+.tier-card,
+.monthly-donor-card,
+.annual-donor-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.support-tier-card *,
+.donor-tier-card *,
+.tier-card *,
+.monthly-donor-card *,
+.annual-donor-card * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.tier-amount,
+.support-tier-card .tier-amount,
+.donor-tier-card .tier-amount,
+.tier-card .tier-amount,
+.monthly-donor-card .tier-amount,
+.annual-donor-card .tier-amount {
+  display: block;
+  white-space: normal;
+  overflow-wrap: normal;
+  word-break: normal;
+  line-height: 1.08;
+  font-size: clamp(1.25rem, 2.2vw, 1.85rem);
+  letter-spacing: -0.02em;
+}
+
+.tier-amount .per,
+.support-tier-card .tier-amount .per,
+.donor-tier-card .tier-amount .per,
+.tier-card .tier-amount .per {
+  display: block;
+  font-size: .82rem;
+  letter-spacing: 0;
+  margin-top: .18rem;
+}
+
+.support-tier-card h3,
+.donor-tier-card h3,
+.tier-card h3,
+.monthly-donor-card h3,
+.annual-donor-card h3 {
+  line-height: 1.12;
+}
+
+.support-tier-card ul,
+.donor-tier-card ul,
+.tier-card ul,
+.monthly-donor-card ul,
+.annual-donor-card ul {
+  padding-left: 1.1rem;
+  margin-left: 0;
+}
+
+.support-tier-card li,
+.donor-tier-card li,
+.tier-card li,
+.monthly-donor-card li,
+.annual-donor-card li {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+/* T-shirt product toggle gallery */
+.tshirt-toggle-gallery {
+  margin: 1.75rem 0 1.25rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+}
+
+.tshirt-toggle-gallery h2 {
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  margin: 0 0 .35rem;
+}
+
+.tshirt-gallery-main-image {
+  transition: opacity .18s ease;
+}
+
+.tshirt-gallery-thumbs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .75rem;
+  margin-top: 1rem;
+}
+
+.tshirt-gallery-thumb {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: white;
+  padding: .45rem;
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  align-items: center;
+  gap: .65rem;
+  text-align: left;
+  color: var(--navy);
+  font-weight: 800;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.tshirt-gallery-thumb img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.tshirt-gallery-thumb:hover,
+.tshirt-gallery-thumb:focus-visible,
+.tshirt-gallery-thumb.active {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(232, 178, 62, .25);
+}
+
+.tshirt-gallery-thumb:focus-visible {
+  outline: 3px solid rgba(232, 178, 62, .45);
+  outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  .tshirt-gallery-thumbs {
+    grid-template-columns: 1fr;
+  }
+}
