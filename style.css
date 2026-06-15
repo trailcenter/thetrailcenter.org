@@ -978,3 +978,123 @@ a:hover { color: var(--gold-dark); }
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Support tier layout fix */
+.support-tier-grid,
+.donor-tier-grid,
+.tier-grid {
+  align-items: stretch;
+}
+
+.support-tier-card,
+.donor-tier-card,
+.tier-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.support-tier-card *,
+.donor-tier-card *,
+.tier-card * {
+  max-width: 100%;
+}
+
+.tier-amount,
+.support-tier-card .tier-amount,
+.donor-tier-card .tier-amount,
+.tier-card .tier-amount {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .25rem;
+  max-width: 100%;
+  white-space: normal;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.support-tier-card ul,
+.donor-tier-card ul,
+.tier-card ul {
+  padding-left: 1.2rem;
+}
+
+/* T-shirt variant toggle previews */
+.store-card-toggle {
+  display: block;
+  overflow: hidden;
+  border-radius: 18px;
+  background: white;
+}
+
+.variant-preview-image {
+  width: 100%;
+  display: block;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.variant-toggle-panel {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1rem;
+  background: var(--soft);
+  margin: 1.25rem 0;
+}
+
+.variant-toggle-panel.compact {
+  margin: 1rem 0;
+  padding: .85rem;
+}
+
+.variant-toggle-panel h2 {
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  margin: 0 0 .35rem;
+}
+
+.toggle-label {
+  margin: 0 0 .5rem;
+  color: var(--navy);
+  font-weight: 900;
+  font-size: .92rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.variant-toggle-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+}
+
+.variant-toggle {
+  border: 1px solid var(--border);
+  background: white;
+  color: var(--navy);
+  font-weight: 800;
+  border-radius: 999px;
+  padding: .45rem .7rem;
+  cursor: pointer;
+  font: inherit;
+  font-size: .86rem;
+  transition: .2s ease;
+}
+
+.variant-toggle:hover,
+.variant-toggle:focus-visible,
+.variant-toggle.active {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+}
+
+.variant-toggle:focus-visible {
+  outline: 3px solid rgba(232, 178, 62, .55);
+  outline-offset: 2px;
+}

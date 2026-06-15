@@ -164,3 +164,36 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+
+// Product image toggle buttons
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleButtons = document.querySelectorAll(".variant-toggle[data-image]");
+  if (!toggleButtons.length) return;
+
+  function updatePreview(button) {
+    const panel = button.closest(".variant-toggle-panel");
+    const root = button.closest(".product-detail-layout") || button.closest(".product-card") || document;
+    const preview = root.querySelector(".variant-preview-image");
+    if (!preview) return;
+
+    preview.src = button.dataset.image;
+    preview.alt = button.textContent.trim() + " t-shirt preview";
+
+    if (panel) {
+      panel.querySelectorAll(".variant-toggle").forEach((btn) => {
+        btn.classList.remove("active");
+        btn.setAttribute("aria-pressed", "false");
+      });
+    }
+
+    button.classList.add("active");
+    button.setAttribute("aria-pressed", "true");
+  }
+
+  toggleButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      updatePreview(button);
+    });
+  });
+});
