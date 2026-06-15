@@ -24,6 +24,7 @@
         <a href="people.html">People</a>
         <a href="get-involved.html">Get Involved</a>
         <a href="support.html">Support</a>
+        <a class="active" href="store.html">Store</a>
         <a href="insights.html">Insights</a>
         <a href="contact.html">Contact</a>
         <div class="dropdown">
@@ -44,10 +45,10 @@
       <div class="hero-content">
         <p class="eyebrow">Mission-Supporting Merchandise</p>
         <h1>TRAIL Center Store</h1>
-        <p class="hero-subtitle">Purchase TRAIL Center merchandise to help support trauma-responsive research, education, advocacy, support resources, and systems-change work.</p>
+        <p class="hero-subtitle">The TRAIL Center Store offers mission-supporting merchandise that helps fund trauma-responsive research, education, advocacy, support resources, and systems-change work.</p>
         <div class="button-row">
-          <a class="button primary" href="#store-items">View Store Items</a>
-          <a class="button secondary" href="support.html">Support the Mission</a>
+          <a class="button primary" href="#store-items">Shop Store Items</a>
+          <a class="button primary" href="support.html">Support the Mission</a>
         </div>
       </div>
     </section>
@@ -57,8 +58,8 @@
         <div>
           <p class="section-kicker">Purpose</p>
           <h2>Wear, use, and share the mission</h2>
-          <p>The TRAIL Center Store will offer mission-supporting merchandise that helps raise funds for the work of the Center. Items will include TRAIL Center logo products as well as branch-specific merchandise for TRAIL Lab, TRAIL Academy, TRAIL Speaks, and TRAIL Forward.</p>
-          <p>Store proceeds will support the development of research tools, public education resources, training materials, support pathways, and systems-change resources.</p>
+          <p>Our store includes TRAIL Center logo products as well as branch-specific merchandise for TRAIL Lab, TRAIL Academy, TRAIL Speaks, and TRAIL Forward.</p>
+          <p>Store proceeds support the development of research tools, public education resources, training materials, support pathways, and systems-change resources.</p>
         </div>
         <figure class="wide-graphic">
           <img src="assets/merch-apparel-mockup.png" alt="TRAIL Center apparel mockup">
@@ -69,165 +70,408 @@
     <section id="store-items" class="section muted-section">
       <div class="container">
         <div class="section-header">
-          <p class="section-kicker">Coming Soon</p>
-          <h2>Store Items</h2>
-          <p>Each item will be listed separately when the store opens. White and black t-shirt options will be available, and branch logo items will be offered alongside TRAIL Center logo items.</p>
+          <p class="section-kicker">Store Items</p>
+          <h2>Choose your item options</h2>
+          <p>Select logo, color, size, and quantity. Pricing is listed below. Checkout links will be connected after the Stripe store products are created.</p>
         </div>
-        <div class="product-grid">
-          
-          <article class="product-card">
+        <div class="store-commerce-layout">
+          <div class="product-grid">
+            
+          <article class="product-card commerce-product" data-product="TRAIL Center T-Shirt" data-price="$28">
             <img src="assets/merch-apparel-mockup.png" alt="TRAIL Center T-Shirt mockup">
             <div>
-              <p class="branch-label">White and black options</p>
+              <p class="branch-label">$28</p>
               <h3>TRAIL Center T-Shirt</h3>
-              <p>Center logo apparel with white or black shirt options.</p>
-              <p class="small-note">Coming soon</p>
+              <p>Soft short-sleeve t-shirt featuring the TRAIL Center logo. Available in white or black.</p>
+              <div class="product-options">
+                
+              <label>Logo
+                <select data-option="Logo" id="product-1-logo">
+                  <option>TRAIL Center</option>
+                </select>
+              </label>
+              <label>Color
+                <select data-option="Color" id="product-1-color">
+                  <option>White</option>
+<option>Black</option>
+                </select>
+              </label>
+              <label>Size
+                <select data-option="Size" id="product-1-size">
+                  <option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+<option>2XL</option>
+<option>3XL</option>
+                </select>
+              </label>
+                <label>Quantity
+                  <input type="number" min="1" value="1">
+                </label>
+              </div>
+              <button class="button primary add-to-cart" type="button">Add to Cart</button>
+              <p class="small-note">Checkout link coming soon. Once Stripe products are created, this button can connect to checkout.</p>
             </div>
           </article>
 
-
-          <article class="product-card">
-            <img src="assets/merch-apparel-mockup.png" alt="TRAIL Lab T-Shirt mockup">
+          <article class="product-card commerce-product" data-product="Branch Logo T-Shirt" data-price="$28">
+            <img src="assets/merch-apparel-mockup.png" alt="Branch Logo T-Shirt mockup">
             <div>
-              <p class="branch-label">White and black options</p>
-              <h3>TRAIL Lab T-Shirt</h3>
-              <p>Branch logo apparel featuring TRAIL Lab.</p>
-              <p class="small-note">Coming soon</p>
+              <p class="branch-label">$28</p>
+              <h3>Branch Logo T-Shirt</h3>
+              <p>Short-sleeve t-shirt featuring your selected TRAIL branch logo.</p>
+              <div class="product-options">
+                
+              <label>Logo
+                <select data-option="Logo" id="product-2-logo">
+                  <option>TRAIL Lab</option>
+<option>TRAIL Academy</option>
+<option>TRAIL Speaks</option>
+<option>TRAIL Forward</option>
+                </select>
+              </label>
+              <label>Color
+                <select data-option="Color" id="product-2-color">
+                  <option>White</option>
+<option>Black</option>
+                </select>
+              </label>
+              <label>Size
+                <select data-option="Size" id="product-2-size">
+                  <option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+<option>2XL</option>
+<option>3XL</option>
+                </select>
+              </label>
+                <label>Quantity
+                  <input type="number" min="1" value="1">
+                </label>
+              </div>
+              <button class="button primary add-to-cart" type="button">Add to Cart</button>
+              <p class="small-note">Checkout link coming soon. Once Stripe products are created, this button can connect to checkout.</p>
             </div>
           </article>
 
-
-          <article class="product-card">
-            <img src="assets/merch-apparel-mockup.png" alt="TRAIL Academy T-Shirt mockup">
-            <div>
-              <p class="branch-label">White and black options</p>
-              <h3>TRAIL Academy T-Shirt</h3>
-              <p>Branch logo apparel featuring TRAIL Academy.</p>
-              <p class="small-note">Coming soon</p>
-            </div>
-          </article>
-
-
-          <article class="product-card">
-            <img src="assets/merch-apparel-mockup.png" alt="TRAIL Speaks T-Shirt mockup">
-            <div>
-              <p class="branch-label">White and black options</p>
-              <h3>TRAIL Speaks T-Shirt</h3>
-              <p>Branch logo apparel featuring TRAIL Speaks.</p>
-              <p class="small-note">Coming soon</p>
-            </div>
-          </article>
-
-
-          <article class="product-card">
-            <img src="assets/merch-apparel-mockup.png" alt="TRAIL Forward T-Shirt mockup">
-            <div>
-              <p class="branch-label">White and black options</p>
-              <h3>TRAIL Forward T-Shirt</h3>
-              <p>Branch logo apparel featuring TRAIL Forward.</p>
-              <p class="small-note">Coming soon</p>
-            </div>
-          </article>
-
-
-          <article class="product-card">
+          <article class="product-card commerce-product" data-product="TRAIL Center Coffee Mug" data-price="$18">
             <img src="assets/merch-mugs-mockup.png" alt="TRAIL Center Coffee Mug mockup">
             <div>
-              <p class="branch-label">White ceramic mug</p>
+              <p class="branch-label">$18</p>
               <h3>TRAIL Center Coffee Mug</h3>
-              <p>White ceramic mug featuring the TRAIL Center logo.</p>
-              <p class="small-note">Coming soon</p>
+              <p>White ceramic coffee mug featuring the TRAIL Center logo.</p>
+              <div class="product-options">
+                
+              <label>Logo
+                <select data-option="Logo" id="product-3-logo">
+                  <option>TRAIL Center</option>
+                </select>
+              </label>
+              <label>Color
+                <select data-option="Color" id="product-3-color">
+                  <option>White ceramic</option>
+                </select>
+              </label>
+              <label>Size
+                <select data-option="Size" id="product-3-size">
+                  <option>11 oz</option>
+                </select>
+              </label>
+                <label>Quantity
+                  <input type="number" min="1" value="1">
+                </label>
+              </div>
+              <button class="button primary add-to-cart" type="button">Add to Cart</button>
+              <p class="small-note">Checkout link coming soon. Once Stripe products are created, this button can connect to checkout.</p>
             </div>
           </article>
 
-
-          <article class="product-card">
-            <img src="assets/merch-mugs-option-two.png" alt="Branch Logo Coffee Mugs mockup">
+          <article class="product-card commerce-product" data-product="Branch Logo Coffee Mug" data-price="$18">
+            <img src="assets/merch-mugs-option-two.png" alt="Branch Logo Coffee Mug mockup">
             <div>
-              <p class="branch-label">White ceramic mugs</p>
-              <h3>Branch Logo Coffee Mugs</h3>
-              <p>White ceramic mug options featuring TRAIL Lab, Academy, Speaks, and Forward logos.</p>
-              <p class="small-note">Coming soon</p>
+              <p class="branch-label">$18</p>
+              <h3>Branch Logo Coffee Mug</h3>
+              <p>White ceramic mug featuring your selected TRAIL branch logo.</p>
+              <div class="product-options">
+                
+              <label>Logo
+                <select data-option="Logo" id="product-4-logo">
+                  <option>TRAIL Lab</option>
+<option>TRAIL Academy</option>
+<option>TRAIL Speaks</option>
+<option>TRAIL Forward</option>
+                </select>
+              </label>
+              <label>Color
+                <select data-option="Color" id="product-4-color">
+                  <option>White ceramic</option>
+                </select>
+              </label>
+              <label>Size
+                <select data-option="Size" id="product-4-size">
+                  <option>11 oz</option>
+                </select>
+              </label>
+                <label>Quantity
+                  <input type="number" min="1" value="1">
+                </label>
+              </div>
+              <button class="button primary add-to-cart" type="button">Add to Cart</button>
+              <p class="small-note">Checkout link coming soon. Once Stripe products are created, this button can connect to checkout.</p>
             </div>
           </article>
 
-
-          <article class="product-card">
+          <article class="product-card commerce-product" data-product="TRAIL Center Trucker Hat" data-price="$26">
             <img src="assets/merch-hats-mockup.png" alt="TRAIL Center Trucker Hat mockup">
             <div>
-              <p class="branch-label">Trucker hat style</p>
+              <p class="branch-label">$26</p>
               <h3>TRAIL Center Trucker Hat</h3>
-              <p>Trucker hat style option featuring the TRAIL Center logo.</p>
-              <p class="small-note">Coming soon</p>
+              <p>Trucker hat style featuring the TRAIL Center logo.</p>
+              <div class="product-options">
+                
+              <label>Logo
+                <select data-option="Logo" id="product-5-logo">
+                  <option>TRAIL Center</option>
+                </select>
+              </label>
+              <label>Color
+                <select data-option="Color" id="product-5-color">
+                  <option>Black</option>
+<option>Navy/white</option>
+<option>Black/white</option>
+                </select>
+              </label>
+              <label>Size
+                <select data-option="Size" id="product-5-size">
+                  <option>Adjustable</option>
+                </select>
+              </label>
+                <label>Quantity
+                  <input type="number" min="1" value="1">
+                </label>
+              </div>
+              <button class="button primary add-to-cart" type="button">Add to Cart</button>
+              <p class="small-note">Checkout link coming soon. Once Stripe products are created, this button can connect to checkout.</p>
             </div>
           </article>
 
-
-          <article class="product-card">
-            <img src="assets/merch-hats-mockup.png" alt="Branch Logo Trucker Hats mockup">
+          <article class="product-card commerce-product" data-product="Branch Logo Trucker Hat" data-price="$26">
+            <img src="assets/merch-hats-mockup.png" alt="Branch Logo Trucker Hat mockup">
             <div>
-              <p class="branch-label">Trucker hat style</p>
-              <h3>Branch Logo Trucker Hats</h3>
-              <p>Trucker hat style options featuring branch logos.</p>
-              <p class="small-note">Coming soon</p>
+              <p class="branch-label">$26</p>
+              <h3>Branch Logo Trucker Hat</h3>
+              <p>Trucker hat style featuring your selected TRAIL branch logo.</p>
+              <div class="product-options">
+                
+              <label>Logo
+                <select data-option="Logo" id="product-6-logo">
+                  <option>TRAIL Lab</option>
+<option>TRAIL Academy</option>
+<option>TRAIL Speaks</option>
+<option>TRAIL Forward</option>
+                </select>
+              </label>
+              <label>Color
+                <select data-option="Color" id="product-6-color">
+                  <option>Black</option>
+<option>Navy/white</option>
+<option>Black/white</option>
+                </select>
+              </label>
+              <label>Size
+                <select data-option="Size" id="product-6-size">
+                  <option>Adjustable</option>
+                </select>
+              </label>
+                <label>Quantity
+                  <input type="number" min="1" value="1">
+                </label>
+              </div>
+              <button class="button primary add-to-cart" type="button">Add to Cart</button>
+              <p class="small-note">Checkout link coming soon. Once Stripe products are created, this button can connect to checkout.</p>
             </div>
           </article>
 
-
-          <article class="product-card">
+          <article class="product-card commerce-product" data-product="TRAIL Center Cloth Tote" data-price="$22">
             <img src="assets/merch-totes-mockup.png" alt="TRAIL Center Cloth Tote mockup">
             <div>
-              <p class="branch-label">Natural cloth tote</p>
+              <p class="branch-label">$22</p>
               <h3>TRAIL Center Cloth Tote</h3>
-              <p>Natural cloth tote featuring the TRAIL Center logo.</p>
-              <p class="small-note">Coming soon</p>
+              <p>Natural cloth tote bag featuring the TRAIL Center logo.</p>
+              <div class="product-options">
+                
+              <label>Logo
+                <select data-option="Logo" id="product-7-logo">
+                  <option>TRAIL Center</option>
+                </select>
+              </label>
+              <label>Color
+                <select data-option="Color" id="product-7-color">
+                  <option>Natural cloth</option>
+                </select>
+              </label>
+              <label>Size
+                <select data-option="Size" id="product-7-size">
+                  <option>Standard tote</option>
+                </select>
+              </label>
+                <label>Quantity
+                  <input type="number" min="1" value="1">
+                </label>
+              </div>
+              <button class="button primary add-to-cart" type="button">Add to Cart</button>
+              <p class="small-note">Checkout link coming soon. Once Stripe products are created, this button can connect to checkout.</p>
             </div>
           </article>
 
-
-          <article class="product-card">
-            <img src="assets/merch-totes-mockup.png" alt="Branch Logo Cloth Totes mockup">
+          <article class="product-card commerce-product" data-product="Branch Logo Cloth Tote" data-price="$22">
+            <img src="assets/merch-totes-mockup.png" alt="Branch Logo Cloth Tote mockup">
             <div>
-              <p class="branch-label">Natural cloth tote</p>
-              <h3>Branch Logo Cloth Totes</h3>
-              <p>Natural cloth tote options featuring branch logos.</p>
-              <p class="small-note">Coming soon</p>
+              <p class="branch-label">$22</p>
+              <h3>Branch Logo Cloth Tote</h3>
+              <p>Natural cloth tote bag featuring your selected TRAIL branch logo.</p>
+              <div class="product-options">
+                
+              <label>Logo
+                <select data-option="Logo" id="product-8-logo">
+                  <option>TRAIL Lab</option>
+<option>TRAIL Academy</option>
+<option>TRAIL Speaks</option>
+<option>TRAIL Forward</option>
+                </select>
+              </label>
+              <label>Color
+                <select data-option="Color" id="product-8-color">
+                  <option>Natural cloth</option>
+                </select>
+              </label>
+              <label>Size
+                <select data-option="Size" id="product-8-size">
+                  <option>Standard tote</option>
+                </select>
+              </label>
+                <label>Quantity
+                  <input type="number" min="1" value="1">
+                </label>
+              </div>
+              <button class="button primary add-to-cart" type="button">Add to Cart</button>
+              <p class="small-note">Checkout link coming soon. Once Stripe products are created, this button can connect to checkout.</p>
             </div>
           </article>
 
-
-          <article class="product-card">
+          <article class="product-card commerce-product" data-product="TRAIL Sticker Pack" data-price="$10">
             <img src="assets/merch-sticker-pack-mockup.png" alt="TRAIL Sticker Pack mockup">
             <div>
-              <p class="branch-label">Sticker bundle</p>
+              <p class="branch-label">$10</p>
               <h3>TRAIL Sticker Pack</h3>
-              <p>A packaged sticker collection featuring TRAIL Center and branch logos.</p>
-              <p class="small-note">Coming soon</p>
+              <p>Sticker package featuring the TRAIL Center logo, branch logos, and mission-based designs.</p>
+              <div class="product-options">
+                
+              <label>Package
+                <select data-option="Package" id="product-9-package">
+                  <option>TRAIL Sticker Pack</option>
+                </select>
+              </label>
+              <label>Quantity
+                <select data-option="Quantity" id="product-9-quantity">
+                  <option>1 pack</option>
+<option>2 packs</option>
+<option>3 packs</option>
+<option>5 packs</option>
+                </select>
+              </label>
+                <label>Quantity
+                  <input type="number" min="1" value="1">
+                </label>
+              </div>
+              <button class="button primary add-to-cart" type="button">Add to Cart</button>
+              <p class="small-note">Checkout link coming soon. Once Stripe products are created, this button can connect to checkout.</p>
             </div>
           </article>
 
-
-          <article class="product-card">
+          <article class="product-card commerce-product" data-product="TRAIL Keychain" data-price="$8">
             <img src="assets/merch-keychains-mockup.png" alt="TRAIL Keychain mockup">
             <div>
-              <p class="branch-label">Keychain options</p>
+              <p class="branch-label">$8</p>
               <h3>TRAIL Keychain</h3>
-              <p>Keychain options featuring TRAIL Center and branch logos.</p>
-              <p class="small-note">Coming soon</p>
+              <p>Keychain featuring your selected TRAIL Center or branch logo.</p>
+              <div class="product-options">
+                
+              <label>Logo
+                <select data-option="Logo" id="product-10-logo">
+                  <option>TRAIL Center</option>
+<option>TRAIL Lab</option>
+<option>TRAIL Academy</option>
+<option>TRAIL Speaks</option>
+<option>TRAIL Forward</option>
+                </select>
+              </label>
+              <label>Style
+                <select data-option="Style" id="product-10-style">
+                  <option>Round</option>
+<option>Arch</option>
+                </select>
+              </label>
+                <label>Quantity
+                  <input type="number" min="1" value="1">
+                </label>
+              </div>
+              <button class="button primary add-to-cart" type="button">Add to Cart</button>
+              <p class="small-note">Checkout link coming soon. Once Stripe products are created, this button can connect to checkout.</p>
             </div>
           </article>
 
-
-          <article class="product-card">
+          <article class="product-card commerce-product" data-product="TRAIL Pen" data-price="$5">
             <img src="assets/merch-pens-mockup.png" alt="TRAIL Pen mockup">
             <div>
-              <p class="branch-label">Pen options</p>
+              <p class="branch-label">$5</p>
               <h3>TRAIL Pen</h3>
-              <p>Pen options featuring TRAIL Center and branch logos.</p>
-              <p class="small-note">Coming soon</p>
+              <p>Branded pen featuring your selected TRAIL Center or branch logo.</p>
+              <div class="product-options">
+                
+              <label>Logo
+                <select data-option="Logo" id="product-11-logo">
+                  <option>TRAIL Center</option>
+<option>TRAIL Lab</option>
+<option>TRAIL Academy</option>
+<option>TRAIL Speaks</option>
+<option>TRAIL Forward</option>
+                </select>
+              </label>
+              <label>Color
+                <select data-option="Color" id="product-11-color">
+                  <option>Navy</option>
+<option>White</option>
+<option>Teal</option>
+<option>Gold</option>
+<option>Black</option>
+                </select>
+              </label>
+                <label>Quantity
+                  <input type="number" min="1" value="1">
+                </label>
+              </div>
+              <button class="button primary add-to-cart" type="button">Add to Cart</button>
+              <p class="small-note">Checkout link coming soon. Once Stripe products are created, this button can connect to checkout.</p>
             </div>
           </article>
+          </div>
 
+          <aside class="cart-panel" aria-label="Shopping cart preview">
+            <h2>Cart Preview</h2>
+            <p>This preview helps show how the store will work. Full checkout will be connected after Stripe product links are created.</p>
+            <div id="cart-items" class="cart-items">
+              <p class="small-note">No items added yet.</p>
+            </div>
+            <div class="cart-total">
+              <strong>Estimated total:</strong>
+              <span id="cart-total">$0</span>
+            </div>
+            <a class="button primary disabled-button" href="#store-items" aria-disabled="true">Checkout Coming Soon</a>
+            <p class="small-note">For a true shopping cart and checkout, the store needs either Stripe Checkout integration or a hosted store/cart service.</p>
+          </aside>
         </div>
       </div>
     </section>
@@ -240,7 +484,7 @@
         <div>
           <p class="section-kicker">Sticker Pack</p>
           <h2>TRAIL sticker bundle</h2>
-          <p>The sticker set will be offered as a package and may include the TRAIL Center logo, branch logos, and mission-based designs.</p>
+          <p>The sticker set is offered as a package and may include the TRAIL Center logo, branch logos, and mission-based designs.</p>
           <p>Sticker packs may also be included as thank-you items for select donor and supporter levels.</p>
         </div>
       </div>
@@ -250,7 +494,7 @@
       <div class="container support-choice-grid">
         <article class="support-choice">
           <h2>Donor Thank-You Items</h2>
-          <p>Some annual and monthly donor levels will include merchandise as a thank-you item, such as a sticker, mug, hat, t-shirt, or full TRAIL merch bundle depending on the giving level.</p>
+          <p>Some annual and monthly donor levels include merchandise as a thank-you item, such as a sticker, mug, hat, t-shirt, or full TRAIL merch bundle depending on the giving level.</p>
           <a class="button primary" href="support.html#annual-supporters">View Donor Levels</a>
         </article>
         <article class="support-choice">
