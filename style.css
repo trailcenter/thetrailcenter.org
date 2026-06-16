@@ -1323,3 +1323,157 @@ a:hover { color: var(--gold-dark); }
   font-size: clamp(1.65rem, 2.3vw, 2.25rem) !important;
   letter-spacing: -0.02em !important;
 }
+
+
+/* Final Support page card and amount formatting */
+.support-page .featured-card,
+.support-page .highlight-card,
+.support-page .tier-card.featured,
+.support-page .donor-tier-card.featured,
+.support-page .support-tier-card.featured {
+  background: #ffffff !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+}
+
+.support-page .featured-card *,
+.support-page .highlight-card *,
+.support-page .tier-card.featured *,
+.support-page .donor-tier-card.featured *,
+.support-page .support-tier-card.featured * {
+  color: inherit;
+}
+
+.support-tier-card,
+.donor-tier-card,
+.tier-card,
+.monthly-donor-card,
+.annual-donor-card {
+  background: #ffffff;
+  color: var(--text);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.support-tier-card h3,
+.donor-tier-card h3,
+.tier-card h3,
+.monthly-donor-card h3,
+.annual-donor-card h3 {
+  color: var(--gold-dark);
+}
+
+.tier-amount,
+.support-tier-card .tier-amount,
+.donor-tier-card .tier-amount,
+.tier-card .tier-amount,
+.monthly-donor-card .tier-amount,
+.annual-donor-card .tier-amount {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: clip !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
+  line-height: 1.05 !important;
+  font-size: clamp(1.08rem, 1.45vw, 1.45rem) !important;
+  letter-spacing: -0.045em !important;
+}
+
+@media (max-width: 1200px) {
+  .tier-amount,
+  .support-tier-card .tier-amount,
+  .donor-tier-card .tier-amount,
+  .tier-card .tier-amount,
+  .monthly-donor-card .tier-amount,
+  .annual-donor-card .tier-amount {
+    font-size: clamp(.95rem, 1.25vw, 1.18rem) !important;
+    letter-spacing: -0.055em !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .tier-amount,
+  .support-tier-card .tier-amount,
+  .donor-tier-card .tier-amount,
+  .tier-card .tier-amount,
+  .monthly-donor-card .tier-amount,
+  .annual-donor-card .tier-amount {
+    font-size: clamp(1.15rem, 5vw, 1.65rem) !important;
+    letter-spacing: -0.035em !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .tier-amount,
+  .support-tier-card .tier-amount,
+  .donor-tier-card .tier-amount,
+  .tier-card .tier-amount,
+  .monthly-donor-card .tier-amount,
+  .annual-donor-card .tier-amount {
+    font-size: 1.08rem !important;
+    letter-spacing: -0.055em !important;
+  }
+}
+
+
+/* Final support h3 amount formatting */
+.tier-card {
+  background: #ffffff !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  overflow: hidden !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.tier-card .tier-label {
+  color: var(--gold-dark) !important;
+}
+
+.tier-card .support-amount,
+.tier-card h3.support-amount {
+  color: var(--navy) !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: clip !important;
+  overflow-wrap: normal !important;
+  word-break: keep-all !important;
+  hyphens: none !important;
+  line-height: 1.05 !important;
+  font-size: clamp(1.05rem, 1.45vw, 1.42rem) !important;
+  letter-spacing: -0.055em !important;
+  margin: .55rem 0 1rem !important;
+}
+
+@media (max-width: 1200px) {
+  .tier-card .support-amount,
+  .tier-card h3.support-amount {
+    font-size: clamp(.92rem, 1.22vw, 1.12rem) !important;
+    letter-spacing: -0.065em !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .tier-card .support-amount,
+  .tier-card h3.support-amount {
+    font-size: clamp(1.15rem, 5vw, 1.55rem) !important;
+    letter-spacing: -0.04em !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .tier-card .support-amount,
+  .tier-card h3.support-amount {
+    font-size: 1.02rem !important;
+    letter-spacing: -0.06em !important;
+  }
+}
