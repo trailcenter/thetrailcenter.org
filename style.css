@@ -1477,3 +1477,12 @@ a:hover { color: var(--gold-dark); }
     letter-spacing: -0.06em !important;
   }
 }
+
+
+/* Impact Partner button override */
+.tier-card .button.primary,
+.tier-card a.button.primary {
+  background: var(--gold) !important;
+  color: var(--navy) !important;
+  border-color: var(--gold) !important;
+}
