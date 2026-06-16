@@ -1486,3 +1486,21 @@ a:hover { color: var(--gold-dark); }
   color: var(--navy) !important;
   border-color: var(--gold) !important;
 }
+
+
+/* People page headshot fix */
+.person-headshot,
+.people-card img,
+.person-card img,
+.team-card img,
+.profile-card img {
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 999px;
+  display: block;
+  margin: 0 auto 1rem;
+  border: 4px solid rgba(232, 178, 62, .35);
+  background: #fff;
+}
