@@ -22,16 +22,12 @@
     }
     .kids-feature-panel h2 { margin: .4rem 0 .65rem; }
     .kids-feature-panel p:not(.section-kicker) { max-width: 53ch; }
-    .kids-feature-art { display: block; width: min(100%, 16rem); height: auto; justify-self: center; }
-    .kids-feature-art .spark { transform-box: fill-box; transform-origin: center; }
-    @media (prefers-reduced-motion: no-preference) {
-      .kids-feature.is-visible .spark { animation: kids-spark-float 2s ease-in-out .12s 2 alternate both; }
-      .kids-feature.is-visible .spark-small { animation-delay: .3s; }
-      @keyframes kids-spark-float { from { transform: translateY(0) rotate(-5deg); } to { transform: translateY(-13px) rotate(11deg); } }
-    }
+.kids-feature-flyer { display: block; width: min(100%, 22rem); justify-self: center; border-radius: .9rem; box-shadow: 0 .55rem 1.65rem #16396b24; }
+    .kids-feature-flyer:focus-visible { outline: 3px solid #1a527d; outline-offset: 4px; }
+    .kids-feature-flyer img { display: block; width: 100%; height: auto; border-radius: inherit; }
     @media (max-width: 600px) {
-      .kids-feature-panel { grid-template-columns: 1fr; gap: .65rem; }
-      .kids-feature-art { grid-row: 1; justify-self: start; width: 7rem; }
+      .kids-feature-panel { grid-template-columns: 1fr; gap: 1.15rem; }
+      .kids-feature-flyer { width: min(100%, 19rem); }
     }
   </style>
 </head>
@@ -96,18 +92,9 @@
       <p>Children practice handling big emotions, building healthy relationships, working through conflict, and bouncing back from setbacks.</p>
       <a class="button primary" href="kids-academy-payments.html">TRAIL Kids Academy</a>
     </div>
-    <svg class="kids-feature-art" viewBox="0 0 250 180" aria-hidden="true" focusable="false">
-      <path d="M31 102C31 63 60 42 105 42h45c37 0 63 22 63 56 0 33-26 57-63 57h-43l-26 15 3-18c-31-7-53-24-53-50Z" fill="#cbecf9"/>
-      <path d="M46 94c0-26 20-45 51-45h46c31 0 51 19 51 45 0 26-20 45-51 45h-37l-24 18 4-20c-24-4-40-21-40-43Z" fill="#123d76"/>
-      <path d="M73 85h56m-56 15h44" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
-      <g class="spark">
-        <path d="M185 11c4 23 12 32 34 36-22 4-30 13-34 36-4-23-12-32-34-36 22-4 30-13 34-36Z" fill="#ffc956" stroke="#123d76" stroke-width="3" stroke-linejoin="round"/>
-      </g>
-      <g class="spark spark-small">
-        <path d="M212 86c3 12 8 17 20 20-12 3-17 8-20 20-3-12-8-17-20-20 12-3 17-8 20-20Z" fill="#57d2bd" stroke="#123d76" stroke-width="2.5" stroke-linejoin="round"/>
-        <circle cx="32" cy="44" r="6" fill="#7959c9"/>
-      </g>
-    </svg>
+    <a class="kids-feature-flyer" href="assets/kids-academy-flyer.webp" aria-label="View the full-size TRAIL Kids Academy flyer">
+      <img src="assets/kids-academy-flyer.webp" width="889" height="1150" alt="TRAIL Kids Academy flyer: now enrolling January 11, 2027, for ages 5–12 at St. Paul’s Lutheran Church in Sarasota." decoding="async">
+    </a>
   </div>
 </section>
 
@@ -198,16 +185,5 @@
 </footer>
 
   <script src="script.js"></script>
-  <script>
-    const kidsFeature = document.querySelector('.kids-feature');
-    if (kidsFeature && 'IntersectionObserver' in window) {
-      const kidsFeatureObserver = new IntersectionObserver(([entry], observer) => {
-        if (!entry.isIntersecting) return;
-        kidsFeature.classList.add('is-visible');
-        observer.disconnect();
-      });
-      kidsFeatureObserver.observe(kidsFeature);
-    }
-  </script>
 </body>
 </html>
