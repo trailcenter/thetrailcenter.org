@@ -9,6 +9,7 @@
   const next = root.querySelector('.home-feature-next');
   const nav = root.querySelector('.home-feature-nav');
   const counter = root.querySelector('output');
+  const marketSource = root.querySelector('.home-feature-market-source');
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   for (const slide of track.querySelectorAll('[data-feature-expires]')) {
     if (Date.now() >= Date.parse(slide.dataset.featureExpires)) slide.remove();
@@ -26,7 +27,7 @@
   track.append(trail);
   const all = [...track.children], n = slides.length;
   let index = 0, interval, settle, jump = null;
-  let playing = !motion.matches, hovered = false, touchStart = null, lastSwipe = 0;
+  let playing = !motion.matches, touchStart = null, lastSwipe = 0;
   const dots = slides.map((slide, i) => {
     const dot = document.createElement('button');
     dot.type = 'button';
@@ -39,12 +40,26 @@
   });
   function updateTimer() {
     clearInterval(interval);
-    const active = playing && !motion.matches && !hovered && !document.hidden && !viewport.contains(document.activeElement);
+    const active = playing && !document.hidden && !viewport.contains(document.activeElement) && document.activeElement !== marketSource;
     if (active) interval = window.setInterval(() => show(index + 1, 1), 6900);
     root.classList.toggle('is-playing', active);
+    syncClip();
     toggle.textContent = playing ? 'Pause slideshow' : 'Play slideshow';
-    toggle.hidden = motion.matches;
-    counter.setAttribute('aria-live', playing && !motion.matches ? 'off' : 'polite');
+    counter.setAttribute('aria-live', playing ? 'off' : 'polite');
+  }
+  function syncClip() {
+    for (const slide of all) {
+      const clip = slide.querySelector('video[data-src]');
+      if (!clip) continue;
+      const enabled = slide === slides[index] && playing && !motion.matches && !document.hidden;
+      if (!enabled) {
+        if (!clip.paused) clip.pause();
+        continue;
+      }
+      if (!clip.hasAttribute('src')) clip.src = clip.dataset.src;
+      clip.muted = true;
+      if (clip.paused) clip.play().catch(() => {});
+    }
   }
   function position(slot) {
     track.style.transform = 'translate3d(' + (-100 * slot) + '%, 0, 0)';
@@ -87,12 +102,13 @@
       }
     });
     all.forEach((slide, i) => slide.classList.toggle('is-active', i === slot || i === index + 1));
+    if (marketSource) marketSource.hidden = !slides[index].classList.contains('home-feature-market');
+    syncClip();
     counter.value = 'Feature ' + (index + 1) + ' of ' + n + ': ' + slides[index].dataset.featureName;
   }
   function manual(to, direction) {
-    playing = false;
-    updateTimer();
     show(to, direction);
+    updateTimer();
   }
   track.addEventListener('transitionend', e => {
     if (e.target === track && e.propertyName === 'transform') settleWrap();
@@ -102,15 +118,14 @@
   next.addEventListener('click', () => manual(index + 1, 1));
   root.addEventListener('focusin', e => {
     if (e.target === toggle) return;
+    if (e.target === marketSource) updateTimer();
     if (track.contains(e.target)) {
-      playing = false;
       updateTimer();
       // Browsers can try to scroll the viewport when focus enters a transformed track.
       viewport.scrollLeft = 0;
     }
   });
-  viewport.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') { hovered = true; updateTimer(); } });
-  viewport.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') { hovered = false; updateTimer(); } });
+  root.addEventListener('focusout', () => window.setTimeout(updateTimer, 0));
   viewport.addEventListener('pointerdown', e => {
     if (e.pointerType === 'touch' && e.isPrimary) touchStart = {x:e.clientX,y:e.clientY};
   });
