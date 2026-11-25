@@ -7,6 +7,12 @@
   <meta name="description" content="Meet TRAIL Center leadership and team members.">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .people-section + .people-section { padding-top: 0; }
+    .people-section-title { margin: 0 0 1.2rem; }
+    .people-section .person-card h3 { margin: 0 0 .35rem; overflow-wrap: anywhere; }
+    .people-section .alex-headshot { object-position: center 8%; }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -52,13 +58,15 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container people-grid expanded-people-grid">
+<section class="section people-section" aria-labelledby="founding-members">
+  <div class="container">
+    <h2 id="founding-members" class="people-section-title">Founding Members</h2>
+    <div class="people-grid expanded-people-grid">
     <article class="person-card featured-person">
       <img class="headshot" src="assets/lori-hall-professional-headshot.png" alt="Professional headshot of Dr. Lori L. Hall">
       <div>
         <p class="section-kicker">A message from the director</p>
-        <h2>Dr. Lori L. Hall</h2>
+        <h3>Dr. Lori L. Hall</h3>
         <p class="role">Director</p>
         <p class="director-message">“The TRAIL Center was built on the belief that trauma knowledge must move beyond awareness and become meaningful action. Our growing team brings together research, education, advocacy, lived experience, creativity, and systems thinking to build practical pathways toward healing and change. We welcome collaboration with people and organizations who share that commitment.”</p>
         <p class="director-signature">— Dr. Lori L. Hall</p>
@@ -67,52 +75,72 @@
     </article>
     <article class="person-card">
       <img src="assets/christian-tapia-headshot.png" alt="Christian Tapia headshot" class="person-headshot christian-headshot">
-      <h2>Christian Tapia</h2>
+      <h3>Christian Tapia</h3>
       <p class="role">Manager, TRAIL Lab</p>
       <div class="profile-links"><a class="button primary" href="members.html#christian-tapia">View profile</a><a class="button primary linkedin-link" href="https://www.linkedin.com/in/christian-tapia-/" target="_blank" rel="noopener" aria-label="Connect with Christian Tapia via LinkedIn">Connect via LinkedIn</a></div>
     </article>
     <article class="person-card with-photo">
       <img class="profile-photo" src="assets/emily-mejia-headshot.jpg" alt="Emily Mejia">
-      <h2>Emily Mejia</h2>
-      <p class="role">Manager, TRAIL Academy</p>
+      <h3>Emily Mejia</h3>
+      <p class="role">Manager, TRAIL Academy<br>Manager, TRAIL Forward</p>
       <div class="profile-links"><a class="button primary" href="members.html#emily-mejia">View profile</a><a class="button primary linkedin-link" href="https://www.linkedin.com/in/emily-mejia-6420b0383/" target="_blank" rel="noopener" aria-label="Connect with Emily Mejia via LinkedIn">Connect via LinkedIn</a></div>
     </article>
     <article class="person-card">
       <img src="assets/leah-burton-headshot.jpeg" alt="Leah Burton headshot" class="person-headshot">
-      <h2>Leah Burton</h2>
+      <h3>Leah Burton</h3>
       <p class="role">Manager, TRAIL Speaks</p>
       <a class="button primary" href="members.html#leah-burton">View profile</a>
     </article>
     <article class="person-card">
+      <img class="person-headshot alex-headshot" src="assets/alexandro-jimenez-morgado-headshot.jpg" alt="Alexandro Jimenez-Morgado" loading="lazy" decoding="async">
+      <h3>Alexandro Jimenez-Morgado</h3>
+      <p class="role">Social Media Manager</p>
+      <div class="profile-links">
+        <a class="button primary" href="members.html#alexandro-jimenez-morgado">View profile</a>
+        <a class="button secondary" href="assets/alexandro-jimenez-morgado-resume.pdf" target="_blank" rel="noopener">View résumé (PDF)</a>
+      </div>
+    </article>
+    </div>
+  </div>
+</section>
+
+<section class="section people-section" aria-labelledby="support-staff">
+  <div class="container">
+    <h2 id="support-staff" class="people-section-title">Support Staff</h2>
+    <div class="people-grid expanded-people-grid">
+    <article class="person-card">
+      <img class="person-headshot" src="assets/helynn-heisler-headshot.jpg" alt="Helynn Heisler" loading="lazy" decoding="async">
+      <h3>Helynn Heisler</h3>
+      <p class="role">Events Coordinator</p>
+      <div class="profile-links"><a class="button primary linkedin-link" href="https://www.linkedin.com/in/helynn-heisler-98b61234a/" target="_blank" rel="noopener" aria-label="Connect with Helynn Heisler via LinkedIn">Connect via LinkedIn</a></div>
+    </article>
+    <article class="person-card">
       <img src="assets/koichi-sato-headshot.jpg" alt="Dr. Koichi Sato headshot" class="person-headshot">
-      <h2>Koichi Sato, Ed.D.</h2>
+      <h3>Koichi Sato, Ed.D.</h3>
       <p class="role">Instructional Design Consultant</p>
       <div class="profile-links"><a class="button primary" href="members.html#koichi-sato">View profile</a><a class="button primary linkedin-link" href="https://www.linkedin.com/in/k0ichisat0/" target="_blank" rel="noopener" aria-label="Connect with Dr. Koichi Sato via LinkedIn">Connect via LinkedIn</a></div>
     </article>
-    <article class="person-card placeholder-person">
-      <div class="profile-placeholder" aria-hidden="true">AJ</div>
-      <h2>Alexandro Jimenez-Morgado</h2>
-      <p class="role">Social Media Manager</p>
-      <a class="button secondary" href="members.html#alexandro-jimenez-morgado">Profile coming soon</a>
-    </article>
+    </div>
+  </div>
+</section>
+
+<section class="section people-section" aria-labelledby="open-positions">
+  <div class="container">
+    <h2 id="open-positions" class="people-section-title">Open Positions</h2>
+    <div class="people-grid expanded-people-grid">
     <article class="person-card placeholder-person">
       <div class="profile-placeholder" aria-hidden="true">CD</div>
-      <h2>Creative Director</h2>
+      <h3>Creative Director</h3>
       <p class="role">Position to be filled</p>
       <p class="profile-note">This future role will guide the Center’s creative direction, visual storytelling, campaigns, and public-facing media.</p>
     </article>
     <article class="person-card placeholder-person">
-      <div class="profile-placeholder" aria-hidden="true">TF</div>
-      <h2>TRAIL Forward</h2>
-      <p class="role">Manager position available</p>
-      <p class="profile-note">Team member information will be added when this role is filled.</p>
-    </article>
-    <article class="person-card placeholder-person">
       <div class="profile-placeholder" aria-hidden="true">CP</div>
-      <h2>Cinematographer &amp; Producer</h2>
+      <h3>Cinematographer &amp; Producer</h3>
       <p class="role">Position to be filled</p>
       <p class="profile-note">Name, photo, biography, and contact information are coming soon.</p>
     </article>
+    </div>
   </div>
 </section>
 
