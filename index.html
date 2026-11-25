@@ -7,6 +7,46 @@
   <meta name="description" content="The TRAIL Center advances trauma-responsive systems through research, support, training, and policy change.">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .home-kids-strip { background: #edf6ff; padding: .75rem clamp(.75rem, 3vw, 2rem); }
+    .home-kids-strip .kids-promo {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: .9rem;
+      padding: .7rem clamp(.8rem, 2.4vw, 1.6rem);
+      border: 1px solid #b5d2eb;
+      border-radius: 1rem;
+      background: linear-gradient(110deg, #103b6b, #0d2b50);
+      color: #fff;
+      text-decoration: none;
+    }
+    .kids-promo:hover { border-color: #ffdb79; }
+    .kids-promo:focus-visible { outline: 3px solid #08284a; outline-offset: 3px; }
+    .kids-promo-graphic { width: 4.4rem; height: auto; display: block; }
+    .kids-promo-copy { display: grid; gap: .06rem; }
+    .kids-promo-status {
+      color: #ffe096; font-size: .74rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase;
+    }
+    .kids-promo-title { font-size: clamp(1.05rem, 2vw, 1.45rem); line-height: 1.18; }
+    .kids-promo-detail { color: #e4f0ff; font-size: .88rem; }
+    .kids-promo-cta {
+      justify-self: start; display: inline-flex; align-items: center; min-height: 44px;
+      padding: .48rem .85rem; border-radius: 999px; background: #ffdb79; color: #08284a;
+      font-size: .9rem; font-weight: 800; text-align: center;
+    }
+    .kids-promo:hover .kids-promo-cta { background: #ffe7ab; }
+    @media (max-width: 600px) {
+      .home-kids-strip .kids-promo { grid-template-columns: auto minmax(0, 1fr); gap: .45rem .65rem; }
+      .kids-promo-graphic { width: 3.2rem; }
+      .kids-promo-cta { grid-column: 2; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .kids-promo-spark { transform-box: fill-box; transform-origin: center; animation: home-kids-drift 1.8s ease-in-out 2 alternate; }
+      .kids-promo-spark-small { animation-delay: .25s; }
+      @keyframes home-kids-drift { from { transform: translateY(0) rotate(0); } to { transform: translateY(-5px) rotate(14deg); } }
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -44,6 +84,24 @@
 
   <main id="main">
     
+<section class="home-kids-strip" aria-label="Kids Academy enrollment announcement">
+  <a class="container kids-promo" href="trail-academy.html#kids-academy">
+    <svg class="kids-promo-graphic" viewBox="0 0 80 65" aria-hidden="true" focusable="false">
+      <circle cx="35" cy="35" r="25" fill="#75dfc9"/>
+      <path d="M14 29c0-7 6-12 13-12h17c8 0 14 5 14 12v9c0 7-6 12-14 12H32l-10 7 2-8c-6-1-10-6-10-11Z" fill="#153e74"/>
+      <path d="M24 30h19m-19 7h13" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      <path class="kids-promo-spark" d="M59 6c2 10 6 14 16 16-10 2-14 6-16 16-2-10-6-14-16-16 10-2 14-6 16-16Z" fill="#ffdb79"/>
+      <circle class="kids-promo-spark kids-promo-spark-small" cx="66" cy="47" r="4" fill="#c9baff"/>
+    </svg>
+    <span class="kids-promo-copy">
+      <span class="kids-promo-status">Now Enrolling</span>
+      <strong class="kids-promo-title">TRAIL Kids Academy</strong>
+      <span class="kids-promo-detail">After-school sessions and summer camps for ages 5–12</span>
+    </span>
+    <span class="kids-promo-cta">Explore Kids Academy <span aria-hidden="true">&nbsp;&rarr;</span></span>
+  </a>
+</section>
+
 <section class="hero home-hero">
   <div class="hero-content split-hero">
     <div>
