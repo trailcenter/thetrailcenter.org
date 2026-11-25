@@ -7,6 +7,7 @@
   const toggle = root.querySelector('.home-feature-toggle');
   const previous = root.querySelector('.home-feature-prev');
   const next = root.querySelector('.home-feature-next');
+  const nav = root.querySelector('.home-feature-nav');
   const counter = root.querySelector('output');
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   for (const slide of track.querySelectorAll('[data-feature-expires]')) {
@@ -14,36 +15,100 @@
   }
   const slides = [...track.children];
   if (slides.length < 2) return;
-  let index = 0, interval = 0, playing = !motion.matches, hovered = false;
-  let touchStart = null, lastSwipe = 0;
+  const clone = slide => {
+    const copy = slide.cloneNode(true);
+    copy.inert = true;
+    copy.setAttribute('aria-hidden','true');
+    return copy;
+  };
+  const lead = clone(slides.at(-1)), trail = clone(slides[0]);
+  track.prepend(lead);
+  track.append(trail);
+  const all = [...track.children], n = slides.length;
+  let index = 0, interval, settle, jump = null;
+  let playing = !motion.matches, hovered = false, touchStart = null, lastSwipe = 0;
+  const dots = slides.map((slide, i) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'home-feature-dot';
+    dot.setAttribute('aria-label', 'Show ' + slide.dataset.featureName);
+    dot.setAttribute('aria-controls', viewport.id);
+    dot.addEventListener('click', () => manual(i, 0));
+    nav.append(dot);
+    return dot;
+  });
   function updateTimer() {
     clearInterval(interval);
-    if (playing && !motion.matches && !hovered && !document.hidden && !viewport.contains(document.activeElement)) {
-      interval = window.setInterval(() => show(index + 1), 8200);
-    }
+    const active = playing && !motion.matches && !hovered && !document.hidden && !viewport.contains(document.activeElement);
+    if (active) interval = window.setInterval(() => show(index + 1, 1), 6900);
+    root.classList.toggle('is-playing', active);
     toggle.textContent = playing ? 'Pause slideshow' : 'Play slideshow';
     toggle.hidden = motion.matches;
     counter.setAttribute('aria-live', playing && !motion.matches ? 'off' : 'polite');
   }
-  function show(to) {
-    index = (to + slides.length) % slides.length;
-    track.style.transform = 'translateX(' + (-100 * index) + '%)';
+  function position(slot) {
+    track.style.transform = 'translate3d(' + (-100 * slot) + '%, 0, 0)';
+  }
+  function snap(slot) {
+    track.classList.add('is-jump');
+    position(slot);
+    void track.offsetWidth;
+    track.classList.remove('is-jump');
+  }
+  function settleWrap() {
+    if (jump === null) return;
+    clearTimeout(settle);
+    snap(jump);
+    jump = null;
+    for (const copy of [lead, trail]) copy.classList.remove('is-active');
+  }
+  function show(to, direction = 0, initial = false) {
+    settleWrap();
+    const old = index;
+    index = (to + n) % n;
+    let slot = index + 1;
+    if (!motion.matches) {
+      if (direction > 0 && old === n - 1 && index === 0) slot = n + 1;
+      if (direction < 0 && old === 0 && index === n - 1) slot = 0;
+    }
+    if (initial) snap(slot); else position(slot);
+    if (slot !== index + 1) {
+      jump = index + 1;
+      settle = window.setTimeout(settleWrap, 720);
+    }
     slides.forEach((slide, i) => {
       slide.inert = i !== index;
-      if (i === index) slide.removeAttribute('aria-hidden');
-      else slide.setAttribute('aria-hidden', 'true');
+      if (i === index) {
+        slide.removeAttribute('aria-hidden');
+        dots[i].setAttribute('aria-current','true');
+      } else {
+        slide.setAttribute('aria-hidden','true');
+        dots[i].removeAttribute('aria-current');
+      }
     });
-    counter.value = (index + 1) + ' / ' + slides.length;
+    all.forEach((slide, i) => slide.classList.toggle('is-active', i === slot || i === index + 1));
+    counter.value = 'Feature ' + (index + 1) + ' of ' + n + ': ' + slides[index].dataset.featureName;
   }
-  function manual(by) {
+  function manual(to, direction) {
     playing = false;
     updateTimer();
-    show(index + by);
+    show(to, direction);
   }
+  track.addEventListener('transitionend', e => {
+    if (e.target === track && e.propertyName === 'transform') settleWrap();
+  });
   toggle.addEventListener('click', () => { playing = !playing; updateTimer(); });
-  previous.addEventListener('click', () => manual(-1));
-  next.addEventListener('click', () => manual(1));
-  viewport.addEventListener('focusin', () => { playing = false; updateTimer(); });
+  previous.addEventListener('click', () => manual(index - 1, -1));
+  next.addEventListener('click', () => manual(index + 1, 1));
+  root.addEventListener('focusin', e => {
+    if (e.target === toggle) return;
+    if (track.contains(e.target)) {
+      playing = false;
+      updateTimer();
+      // Browsers can try to scroll the viewport when focus enters a transformed track.
+      viewport.scrollLeft = 0;
+    }
+  });
   viewport.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') { hovered = true; updateTimer(); } });
   viewport.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') { hovered = false; updateTimer(); } });
   viewport.addEventListener('pointerdown', e => {
@@ -53,16 +118,18 @@
     if (!touchStart || e.pointerType !== 'touch') return;
     const dx = e.clientX - touchStart.x, dy = e.clientY - touchStart.y;
     touchStart = null;
-    if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy) * 1.25) {
-      lastSwipe = Date.now(); manual(dx < 0 ? 1 : -1);
+    if (Math.abs(dx) > 46 && Math.abs(dx) > Math.abs(dy) * 1.25) {
+      const direction = dx < 0 ? 1 : -1;
+      lastSwipe = Date.now();
+      manual(index + direction, direction);
     }
   });
   viewport.addEventListener('pointercancel', () => { touchStart = null; });
   viewport.addEventListener('click', e => { if (lastSwipe && Date.now() - lastSwipe < 400) e.preventDefault(); }, true);
   document.addEventListener('visibilitychange', updateTimer);
-  motion.addEventListener('change', () => { if (motion.matches) playing = false; updateTimer(); });
-  track.style.setProperty('--slide-count', slides.length);
+  motion.addEventListener('change', () => { if (motion.matches) playing = false; settleWrap(); updateTimer(); });
+  track.style.setProperty('--slide-count', all.length);
   root.classList.add('is-ready');
-  show(0);
+  show(0, 0, true);
   updateTimer();
 })();
