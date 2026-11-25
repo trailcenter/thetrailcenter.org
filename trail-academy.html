@@ -7,6 +7,33 @@
   <meta name="description" content="Training, workshops, curriculum, and professional education that help people and organizations build trauma-responsive practice.">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .kids-feature { padding-block: clamp(1.75rem, 4vw, 3.5rem); scroll-margin-top: 6rem; }
+    .kids-feature-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+      align-items: center;
+      gap: clamp(1rem, 4vw, 3.5rem);
+      padding: clamp(1.25rem, 4vw, 3rem);
+      border: 1px solid #cbdcf1;
+      border-radius: 1.5rem;
+      background: linear-gradient(115deg, #eef5ff, #effbf9 78%);
+      color: #08284a;
+    }
+    .kids-feature-panel h2 { margin: .4rem 0 .65rem; }
+    .kids-feature-panel p:not(.section-kicker) { max-width: 53ch; }
+    .kids-feature-art { display: block; width: min(100%, 16rem); height: auto; justify-self: center; }
+    .kids-feature-art .spark { transform-box: fill-box; transform-origin: center; }
+    @media (prefers-reduced-motion: no-preference) {
+      .kids-feature.is-visible .spark { animation: kids-spark-float 2s ease-in-out .12s 2 alternate both; }
+      .kids-feature.is-visible .spark-small { animation-delay: .3s; }
+      @keyframes kids-spark-float { from { transform: translateY(0) rotate(-5deg); } to { transform: translateY(-13px) rotate(11deg); } }
+    }
+    @media (max-width: 600px) {
+      .kids-feature-panel { grid-template-columns: 1fr; gap: .65rem; }
+      .kids-feature-art { grid-row: 1; justify-self: start; width: 7rem; }
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -61,6 +88,29 @@
   </div>
 </section>
 
+<section class="section kids-feature" id="kids-academy" aria-labelledby="kids-academy-title">
+  <div class="container kids-feature-panel">
+    <div>
+      <p class="section-kicker">After school &amp; summer camps &middot; Ages 5–12</p>
+      <h2 id="kids-academy-title">TRAIL Kids Academy</h2>
+      <p>Children practice handling big emotions, building healthy relationships, working through conflict, and bouncing back from setbacks.</p>
+      <a class="button primary" href="kids-academy-payments.html">TRAIL Kids Academy</a>
+    </div>
+    <svg class="kids-feature-art" viewBox="0 0 250 180" aria-hidden="true" focusable="false">
+      <path d="M31 102C31 63 60 42 105 42h45c37 0 63 22 63 56 0 33-26 57-63 57h-43l-26 15 3-18c-31-7-53-24-53-50Z" fill="#cbecf9"/>
+      <path d="M46 94c0-26 20-45 51-45h46c31 0 51 19 51 45 0 26-20 45-51 45h-37l-24 18 4-20c-24-4-40-21-40-43Z" fill="#123d76"/>
+      <path d="M73 85h56m-56 15h44" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+      <g class="spark">
+        <path d="M185 11c4 23 12 32 34 36-22 4-30 13-34 36-4-23-12-32-34-36 22-4 30-13 34-36Z" fill="#ffc956" stroke="#123d76" stroke-width="3" stroke-linejoin="round"/>
+      </g>
+      <g class="spark spark-small">
+        <path d="M212 86c3 12 8 17 20 20-12 3-17 8-20 20-3-12-8-17-20-20 12-3 17-8 20-20Z" fill="#57d2bd" stroke="#123d76" stroke-width="2.5" stroke-linejoin="round"/>
+        <circle cx="32" cy="44" r="6" fill="#7959c9"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
 <section class="section">
   <div class="container">
     <div class="section-header">
@@ -75,21 +125,6 @@
     </div>
   </div>
 </section>
-<section class="section muted-section" id="kids-academy" aria-labelledby="kids-academy-title">
-  <div class="container text-image-row">
-    <div>
-      <p class="section-kicker">For children ages 5–12</p>
-      <h2 id="kids-academy-title">TRAIL Kids Academy</h2>
-      <p>Through after-school sessions and summer camps, children practice handling big emotions, building healthy relationships, working through conflict, and bouncing back from setbacks.</p>
-    </div>
-    <div class="stat-panel">
-      <h3>Explore sessions and camps</h3>
-      <p>See the 2027 program dates and tuition, enroll your child, and pay securely through Stripe.</p>
-      <a class="button primary" href="kids-academy-payments.html">TRAIL Kids Academy</a>
-    </div>
-  </div>
-</section>
-
 <section class="section muted-section">
   <div class="container text-image-row">
     <div>
@@ -163,5 +198,16 @@
 </footer>
 
   <script src="script.js"></script>
+  <script>
+    const kidsFeature = document.querySelector('.kids-feature');
+    if (kidsFeature && 'IntersectionObserver' in window) {
+      const kidsFeatureObserver = new IntersectionObserver(([entry], observer) => {
+        if (!entry.isIntersecting) return;
+        kidsFeature.classList.add('is-visible');
+        observer.disconnect();
+      });
+      kidsFeatureObserver.observe(kidsFeature);
+    }
+  </script>
 </body>
 </html>

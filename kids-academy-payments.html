@@ -8,6 +8,17 @@
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="style.css">
   <style>
+    .kids-back.button {
+      background: var(--navy);
+      color: #fff;
+      border-color: var(--navy);
+      padding: .55rem .85rem;
+      min-height: 44px;
+      font-size: clamp(.75rem, 2.8vw, .95rem);
+      text-align: center;
+    }
+    .kids-back.button:hover { background: var(--navy-2); }
+    .kids-back.button:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
     .program-actions {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -40,7 +51,7 @@
         <img src="assets/trail-center-logo.png" alt="TRAIL Center logo">
       </a>
       <nav class="site-nav" aria-label="Kids Academy navigation">
-        <a class="button secondary" href="trail-academy.html#kids-academy">Back to TRAIL Academy</a>
+        <a class="button kids-back" href="trail-academy.html#kids-academy">Back to TRAIL Academy</a>
       </nav>
     </div>
   </header>
