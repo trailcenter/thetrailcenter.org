@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420">
+<defs><linearGradient id="sky" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#ffe1bd"/><stop offset="1" stop-color="#fff6dc"/></linearGradient><pattern id="stripes" width="70" height="65" patternUnits="userSpaceOnUse"><path fill="#f58168" d="M0 0h35v65H0z"/><path fill="#fff2d1" d="M35 0h35v65H35z"/></pattern></defs>
+<path fill="url(#sky)" d="M0 0h640v420H0z"/><circle cx="510" cy="90" r="56" fill="#ffb739"/><path fill="#9dd4c1" d="M0 320q110-44 260 0t380-1v101H0z"/>
+<g stroke="#1a4552" stroke-width="11" stroke-linecap="round"><path d="M139 220v128m363-128v128"/></g>
+<path fill="#226675" d="M142 256h357v91H142z"/><path fill="#5ba6a1" d="M157 267h135v69H157zm171 0h155v69H328z"/><path fill="#163c47" d="M130 247h381v20H130z"/>
+<path fill="url(#stripes)" d="M172 122h296l63 95h-422z"/><path fill="#eb705e" d="M109 217h422v13c0 13-20 23-35 8q-18 17-35 0-18 17-35 0-18 17-35 0-18 17-35 0-18 17-35 0-18 17-35 0-18 17-35 0-18 17-35 0-18 17-35 0-18 17-35 0-19 16-36 0z"/>
+<path fill="none" stroke="#32766f" stroke-width="6" stroke-linecap="round" d="M69 187q0-40 23-72m-23 52q-6-29-29-37m25 35q15-24 37-25m477 23q20-21 38-20m-38 20q-10-24-35-21m35 20 12 38"/><path fill="#ffc35e" d="m75 77 7 13 15 4-13 9-1 16-12-10-15 5 5-15-9-12 15 1z"/>
+</svg>

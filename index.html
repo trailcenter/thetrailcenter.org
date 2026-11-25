@@ -7,42 +7,7 @@
   <meta name="description" content="The TRAIL Center advances trauma-responsive systems through research, support, training, and policy change.">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="style.css">
-  <style>
-    .home-kids-strip { position: relative; background: #0d2b50; border-block: 1px solid #375b82; color: #fff; }
-    .home-kids-strip .kids-promo { display: block; color: #fff; text-decoration: none; }
-    .kids-promo:focus-visible { outline: 3px solid #ffdb79; outline-offset: -4px; }
-    .kids-promo-viewport { overflow: hidden; background: linear-gradient(105deg, #123d76, #194c82 58%, #123d76); }
-    .kids-promo-track { display: none; }
-    .kids-promo-group { display: flex; flex: 0 0 auto; min-width: 100vw; }
-    .kids-promo-item {
-      display: inline-flex; flex: 1 0 auto; align-items: center; justify-content: center;
-      gap: .72rem; padding: .68rem clamp(.7rem, 3vw, 2.6rem);
-      font-size: clamp(.9rem, 2.2vw, 1.24rem); font-weight: 750;
-    }
-    .kids-promo-static { display: flex; flex-wrap: wrap; text-align: center; }
-    .kids-promo-status { color: #ffdf85; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
-    .kids-promo-star { color: #7ce9d4; font-size: 1.35em; line-height: 1; }
-    .kids-promo-footer {
-      display: flex; align-items: center; min-height: 46px; padding: .3rem 7rem .3rem clamp(.8rem, 4vw, 2.5rem);
-    }
-    .kids-promo-cta { color: #ffdf85; text-decoration: underline; text-underline-offset: .22em; font-size: .92rem; font-weight: 800; }
-    .kids-promo-toggle {
-      display: none; position: absolute; right: .65rem; bottom: 1px; min-width: 5.2rem; min-height: 44px;
-      border: 0; background: transparent; color: #e2f1ff; text-decoration: underline; cursor: pointer;
-      font: inherit; font-size: .83rem;
-    }
-    .kids-promo-toggle:focus-visible { outline: 2px solid #ffdf85; outline-offset: -3px; }
-    @media (prefers-reduced-motion: no-preference) {
-      .is-marquee .kids-promo-static { display: none; }
-      .is-marquee .kids-promo-track {
-        display: flex; width: max-content; white-space: nowrap;
-        animation: kids-marquee-scroll 22s linear infinite;
-      }
-      .is-marquee .kids-promo-toggle { display: inline-flex; align-items: center; justify-content: center; }
-      .is-marquee.is-paused .kids-promo-track { animation-play-state: paused; }
-      @keyframes kids-marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    }
-  </style>
+  <link rel="stylesheet" href="home-promo.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -80,15 +45,31 @@
 
   <main id="main">
     
-<section class="home-kids-strip" aria-label="Kids Academy enrollment announcement">
-  <a class="kids-promo" href="trail-academy.html#kids-academy" aria-label="Now enrolling: Explore TRAIL Kids Academy">
-    <div id="kids-promo-viewport" class="kids-promo-viewport" aria-hidden="true">
-      <span class="kids-promo-static kids-promo-item"><span class="kids-promo-star">✦</span><span class="kids-promo-status">Now Enrolling</span><strong>TRAIL Kids Academy</strong></span>
-      <span class="kids-promo-track"><span class="kids-promo-group"><span class="kids-promo-item"><span class="kids-promo-star" aria-hidden="true">✦</span><span class="kids-promo-status">Now Enrolling</span><strong>TRAIL Kids Academy</strong></span><span class="kids-promo-item"><span class="kids-promo-star" aria-hidden="true">✦</span><span class="kids-promo-status">Now Enrolling</span><strong>TRAIL Kids Academy</strong></span><span class="kids-promo-item"><span class="kids-promo-star" aria-hidden="true">✦</span><span class="kids-promo-status">Now Enrolling</span><strong>TRAIL Kids Academy</strong></span></span><span class="kids-promo-group"><span class="kids-promo-item"><span class="kids-promo-star" aria-hidden="true">✦</span><span class="kids-promo-status">Now Enrolling</span><strong>TRAIL Kids Academy</strong></span><span class="kids-promo-item"><span class="kids-promo-star" aria-hidden="true">✦</span><span class="kids-promo-status">Now Enrolling</span><strong>TRAIL Kids Academy</strong></span><span class="kids-promo-item"><span class="kids-promo-star" aria-hidden="true">✦</span><span class="kids-promo-status">Now Enrolling</span><strong>TRAIL Kids Academy</strong></span></span></span>
+<section class="home-feature" aria-label="Featured programs and events">
+  <div class="home-feature-inner">
+    <div class="home-feature-window" id="home-feature-window">
+      <div class="home-feature-track">
+        <a class="home-feature-slide home-feature-kids" href="trail-academy.html#kids-academy">
+          <span class="home-feature-copy"><span class="home-feature-label">Now enrolling</span><strong class="home-feature-title">TRAIL Kids Academy</strong><span class="home-feature-detail">After-school sessions and summer camps for ages 5–12.</span><span class="home-feature-cta">Explore Kids Academy <span aria-hidden="true">→</span></span></span>
+          <span class="home-feature-art"><img src="assets/kids-academy-promo.webp" alt="" fetchpriority="high"></span>
+        </a>
+        <a class="home-feature-slide home-feature-responders" href="trail-speaks.html#first-responder-support">
+          <span class="home-feature-copy"><span class="home-feature-label">TRAIL Speaks · Free peer support</span><strong class="home-feature-title">First Responder Support Crew</strong><span class="home-feature-detail">First responders, partners and families are welcome. No pressure to share.</span><span class="home-feature-cta">See meeting dates and location <span aria-hidden="true">→</span></span></span>
+          <span class="home-feature-art"><img src="assets/responder-support-flyer.webp" alt=""></span>
+        </a>
+        <a class="home-feature-slide home-feature-market" href="https://stpeteissupercool.com/pages/st-pete-sunday-market" data-feature-expires="2026-12-20T16:00:00-05:00">
+          <span class="home-feature-copy"><span class="home-feature-label">Meet The TRAIL Center</span><strong class="home-feature-title">St. Pete Sunday Market</strong><span class="home-feature-detail">Sunday, December 20 · 11 a.m.–4 p.m. · USF St. Petersburg</span><span class="home-feature-cta">See market details <span aria-hidden="true">→</span></span></span>
+          <span class="home-feature-art"><img src="assets/market-promo.svg" alt=""></span>
+        </a>
+      </div>
     </div>
-    <span class="kids-promo-footer"><span class="kids-promo-cta">Explore Kids Academy <span aria-hidden="true">&rarr;</span></span></span>
-  </a>
-  <button class="kids-promo-toggle" type="button" aria-controls="kids-promo-viewport">Pause scroll</button>
+    <div class="home-feature-controls" aria-label="Featured slide controls">
+      <button type="button" class="home-feature-toggle" aria-controls="home-feature-window">Pause slideshow</button>
+      <button type="button" class="home-feature-prev" aria-controls="home-feature-window" aria-label="Previous feature">←</button>
+      <output aria-live="off">1 / 3</output>
+      <button type="button" class="home-feature-next" aria-controls="home-feature-window" aria-label="Next feature">→</button>
+    </div>
+  </div>
 </section>
 
 <section class="hero home-hero">
@@ -284,17 +265,6 @@
 </footer>
 
   <script src="script.js"></script>
-  <script>
-    (() => {
-      const strip = document.querySelector('.home-kids-strip');
-      const toggle = strip?.querySelector('.kids-promo-toggle');
-      if (!toggle) return;
-      toggle.addEventListener('click', () => {
-        const paused = strip.classList.toggle('is-paused');
-        toggle.textContent = paused ? 'Resume scroll' : 'Pause scroll';
-      });
-      strip.classList.add('is-marquee');
-    })();
-  </script>
+  <script src="home-promo.js"></script>
 </body>
 </html>
