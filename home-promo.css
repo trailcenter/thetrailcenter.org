@@ -80,3 +80,15 @@
  .feature-market-art .feature-reel-poster { right:auto; }
  .home-feature-controls { flex-wrap:wrap; }
 }
+
+/* Spring 2027 TRAIL Lab recognition */
+.home-feature-research { --panel:#0a2234; --accent:#f6d992; --glow:#23526d; }
+.home-feature-research .home-feature-title { font-size:clamp(1.85rem,3.7vw,3.55rem); }
+.home-feature-award-art { padding:clamp(.6rem,1.25vw,1rem); }
+.home-feature-award-art::after { content:none; }
+.feature-award-image { display:block; width:100%; max-width:590px; height:auto; max-height:100%; object-fit:contain; border-radius:.55rem; }
+@media(max-width:650px) {
+  .home-feature-research .home-feature-title { font-size:clamp(1.75rem,7vw,2.7rem); }
+  .home-feature-award-art { padding:.6rem .65rem .35rem; }
+  .home-feature-research .home-feature-copy { padding-top:.35rem; }
+}
